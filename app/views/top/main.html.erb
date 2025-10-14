@@ -1,1 +1,9 @@
-<h1>ログイン中です</h1>
+<h2>メイン画面</h2>
+
+<% if session[:login_uid] %>
+  <p><%= session[:login_uid] %> さん、ログイン中です。</p>
+  <%= link_to "ログアウト", top_logout_path %>
+<% else %>
+  <p>ログインしていません。</p>
+  <%= link_to "ログイン画面へ", top_main_path %>
+<% end %>
